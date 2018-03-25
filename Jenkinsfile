@@ -22,5 +22,13 @@ pipeline {
 				sh "./gradlew jacocoTestCoverageVerification"
 			}
 		}
-                }
+		
+      }
+	post {
+		always{
+			mail to: 'traiano@gmail.com',
+			subject: "Completed pipeline: ${currentBuild.fullDisplayName}",
+			body: "Your build completed. Check: ${env.BUILD_URL}" 
+		}
 	}
+}
