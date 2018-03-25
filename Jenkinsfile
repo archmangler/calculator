@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+		label: "permanent"
+	} 
 	stages {
 		stage("Compile"){
 			steps{
