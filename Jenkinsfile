@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label "permanent"
+		label "dynamic"
 	} 
 	stages {
 		stage("Compile"){
